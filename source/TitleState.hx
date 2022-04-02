@@ -304,7 +304,7 @@ class TitleState extends MusicBeatState
 		{
 			titleText.animation.play('press');
 
-			FlxG.camera.flash(FlxColor.WHITE, 1, null, true);
+			FlxG.camera.flash(FlxColor.BLUE, 1, null, true);
 			FlxG.sound.play(Paths.sound('confirmMenu'), 0.7 * _variables.svolume / 100);
 
 			DiscordClient.changePresence("Proceeding to the Main Menu", null);
@@ -312,7 +312,7 @@ class TitleState extends MusicBeatState
 			transitioning = true;
 			// FlxG.sound.music.stop();
 
-			FlxTween.tween(FlxG.camera, {y: FlxG.height}, 1.6, {ease: FlxEase.expoIn, startDelay: 0.4});
+			FlxTween.tween(FlxG.camera, {y: FlxG.height}, 1.6, {ease: FlxEase.bounceInOut, startDelay: 0.4});
 
 			if (_variables.music != 'classic' && MainVariables.musicList != [])
 				FlxG.sound.music.fadeOut(1.7, 0);
