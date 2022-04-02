@@ -304,15 +304,15 @@ class TitleState extends MusicBeatState
 		{
 			titleText.animation.play('press');
 
-			FlxG.camera.flash(FlxColor.BLUE, 1, null, true);
-			FlxG.sound.play(Paths.sound('confirmMenu'), 0.7 * _variables.svolume / 100);
+			FlxG.camera.flash(FlxColor.WHITE, 1, null, true);
+			FlxG.sound.play(Paths.sound('freshIntro'), 0.7 * _variables.svolume / 100);
 
 			DiscordClient.changePresence("Proceeding to the Main Menu", null);
 
 			transitioning = true;
 			// FlxG.sound.music.stop();
 
-			FlxTween.tween(FlxG.camera, {y: FlxG.height}, 1.6, {ease: FlxEase.bounceInOut, startDelay: 0.4});
+			FlxTween.tween(FlxG.camera, {y: FlxG.height}, 1.6, {ease: FlxEase.bounceOut, startDelay: 0.4});
 
 			if (_variables.music != 'classic' && MainVariables.musicList != [])
 				FlxG.sound.music.fadeOut(1.7, 0);
@@ -463,7 +463,7 @@ class TitleState extends MusicBeatState
 				x: -165,
 				y: -125
 			}, 1.3, {ease: FlxEase.expoInOut, startDelay: 1.3});
-			FlxTween.tween(gfDance, {y: 20}, 2.3, {ease: FlxEase.expoInOut, startDelay: 0.8});
+			FlxTween.tween(gfDance, {y: 20}, 2.3, {ease: FlxEase.elasticOut, startDelay: 0.8});
 			remove(credGroup);
 			titleText.visible = true;
 			logoBl.visible = true;
